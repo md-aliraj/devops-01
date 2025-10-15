@@ -4,7 +4,6 @@ on:
     push:
         branches:
             - main
-            -develop
     workflow_dispatch: {}
 
 concurrency:
@@ -64,3 +63,4 @@ jobs:
                       fuser -k 8000/tcp || true
                       nohup python manage.py runserver 0.0.0.0:8000 > logs.out 2>&1 &
                       echo "Deployment complete and server restarted!"
+
