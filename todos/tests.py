@@ -2,6 +2,7 @@ from django.test import TestCase
 
 # Create your tests here.
 
-class test_clasas():
+class test_classa():
     pass
+
 
