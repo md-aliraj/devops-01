@@ -26,7 +26,7 @@ jobs:
                   host: ${{ secrets.EC2_HOST }}
                   username: ${{ secrets.EC2_USER }}
                   key: ${{ secrets.EC2_SSH_KEY }}
-                  script: |
+                  script: 
                       mkdir -p /home/${{ secrets.EC2_USER }}/backend
                       sudo chown -R $USER:$USER /home/${{ secrets.EC2_USER }}/backend
                       sudo chmod -R u+rwX /home/${{ secrets.EC2_USER }}/backend
@@ -63,4 +63,5 @@ jobs:
                       fuser -k 8000/tcp || true
                       nohup python manage.py runserver 0.0.0.0:8000 > logs.out 2>&1 &
                       echo "Deployment complete and server restarted!"
+
 
